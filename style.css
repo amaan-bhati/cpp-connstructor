@@ -1,0 +1,139 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 14px;
+	--color-text: #8572b2;
+	--color-bg: #0f0026;
+	--color-link: #abcb1a;
+	--color-link-hover: #fff;
+	--color-trigger: #d2d2d2;
+	--color-ui-bg: rgba(153, 71, 235, 0);
+	--color-ui-border: #4d25b0;
+	--color-ui-border-deco: #abcb1a;
+	--color-ui-meta: #58487e;
+	--color-ring: #abcb1a;
+}
+
+html,
+body,
+main {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-family: "lores-12", sans-serif;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	width: 100%;
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
+	overflow: hidden;
+}
+
+p {
+	margin: 0 0 0.5rem;
+}
+
+
+/* Animated globe by Mykl https://codepen.io/MB5/pen/LdaqRb */
+
+@keyframes spin {
+	to {
+		transform: rotateY(-360deg);
+	}
+}
+
+@keyframes opacity {
+	to {
+		opacity: 1;
+	}
+}
+
+.scene {
+	width: 80%;
+	height: auto;
+	aspect-ratio: 1;
+	margin: 20% auto 0;
+	perspective: 1000px;
+}
+
+.scene__inner {
+	width: 100%;
+	height: 100%;
+	transform: rotateX(24deg) rotateY(0deg);
+	transform-style: preserve-3d;
+}
+
+.globe {
+	position: relative;
+	width: 70%;
+	height: 70%;
+	margin: 0 auto;
+	transform-style: preserve-3d;
+	animation: spin 25s 0ms infinite linear;
+}
+
+.ring {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 1px;
+	border-style: dotted;
+	border-radius: 50%;
+	color: var(--color-ring);
+	animation: opacity 0.75s forwards ease-in-out;
+	opacity: 0;
+}
+
+.ring:nth-child(1) {
+	transform: rotateY(4deg);
+}
+
+.ring:nth-child(2) {
+	transform: rotateY(30deg);
+}
+
+.ring:nth-child(3) {
+	transform: rotateY(56deg);
+}
+
+.ring:nth-child(4) {
+	transform: rotateY(82deg);
+}
+
+.ring:nth-child(5) {
+	transform: rotateY(108deg);
+}
+
+.ring:nth-child(6) {
+	transform: rotateY(134deg);
+}
+
+.ring:nth-child(7) {
+	transform: rotateY(160deg);
+}
+
+.glitch {
+	animation-name: glitch-anim;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.glitch--1 {
+	animation-delay: 16s;
+}
+
+.glitch--2 {
+	animation-delay: 12s;
+}
